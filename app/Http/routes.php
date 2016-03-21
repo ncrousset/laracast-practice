@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/feeback', function() {
+	return "You`ve been clicked, punk.";
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

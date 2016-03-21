@@ -38,7 +38,8 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5</div>
+                <div class="title">Laravel 5.2</div>
+                <a href="/feeback">Click Me</a>
             </div>
         </div>
     </body>
