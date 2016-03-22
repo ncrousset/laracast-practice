@@ -14,21 +14,20 @@ class OrderTest extends PHPUnit_Framework_TestCase
 	public function an_order_consists_of_products()
 	{
 
-		$order = new Order();
-
-		$product = new Product('GTA 5', 60);
-		$product2 = new Product('Resident evil 7', 55);
-
-
-		$order->add($product);
-		$order->add($product2);
-
+		$order = $this->createOrderWihtProducts();
 		$this->assertCount(2, $order->products());
 
 	}
 
 	/** @test */
 	public function an_order_can_determine_the_total_cost_of_all_its_products()
+	{
+		$order = $this->createOrderWihtProducts();
+
+		$this->assertEquals(115, $order->total());
+	}
+
+	public function createOrderWihtProducts()
 	{
 		$order = new Order();
 
@@ -38,7 +37,7 @@ class OrderTest extends PHPUnit_Framework_TestCase
 		$order->add($product);
 		$order->add($product2);
 
-		$this->assertEquals(115, $order->total());
+		return $order;
 	}
 
 }
