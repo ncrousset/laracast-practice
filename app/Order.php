@@ -21,4 +21,15 @@ class Order
 	{
 		return $this->products;
 	}
+
+	public function total()
+	{
+		$total = 0;
+
+		foreach ($this->products as $key => $product) {
+			$total += $product->cost();
+		}
+
+		return $total;
+	}
 }
