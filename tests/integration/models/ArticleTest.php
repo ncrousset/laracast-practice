@@ -18,13 +18,13 @@ class ArticleTest extends TestCase
 		//Given
 		factory(Article::class, 2)->create();
 		factory(Article::class)->create(['reads' => 10]);
-		$mostPopular = factory(Article::class)->create(['reads' => 20]);	
+		$mostPopular = factory(Article::class)->create(['reads' => 20]);
 
 		//Where
 		$articles = Article::trending();
 
 		//Then
 		$this->assertEquals($mostPopular->id, $articles->first()->id);
-		$this->assertCount(4, $articles);
+		$this->assertCount(3, $articles);
 	}
 }
